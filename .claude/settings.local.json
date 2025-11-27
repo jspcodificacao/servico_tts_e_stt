@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"F:\\jucieudes\\aplicacoes\\servico_tts_e_stt\\servico_tts_e_stt_local_e_remoto.py\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

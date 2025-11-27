@@ -1,0 +1,44 @@
+# ============================================
+# Dependências OBRIGATÓRIAS (Core)
+# ============================================
+
+# API Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.3
+pydantic==2.10.4
+
+# ============================================
+# Transcrição REMOTA (OpenAI API)
+# ============================================
+# Use apenas isto se quiser SOMENTE transcrição via OpenAI
+openai==1.59.5
+
+# ============================================
+# Transcrição LOCAL (Whisper GPU)
+# ============================================
+# OPCIONAL: Comente estas linhas se não for usar transcrição local
+# Requer: GPU NVIDIA com CUDA (~4GB VRAM)
+# NOTA: O pacote chama-se "openai-whisper" mas importa-se como "import whisper"
+torch==2.5.1
+torchaudio==2.5.1
+openai-whisper==20240930
+
+# ============================================
+# Interface Gráfica (Gravador)
+# ============================================
+# OPCIONAL: Apenas se for usar gravador_transcricao.py
+pyaudio==0.2.14
+
+# ============================================
+# RESUMO
+# ============================================
+# Instalação Mínima (só API OpenAI):
+#   pip install fastapi uvicorn[standard] python-multipart python-dotenv requests pydantic openai
+#
+# Instalação Completa (Local + Remota):
+#   pip install -r requirements.txt
