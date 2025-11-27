@@ -8,6 +8,7 @@ Sistema completo de Text-to-Speech (TTS) e Speech-to-Text (STT) com suporte para
 - **STT Local**: Transcrição de áudio usando Whisper (GPU)
 - **STT Remoto**: Transcrição de áudio usando OpenAI Whisper API
 - **Interface Gráfica**: Aplicação para gravar e comparar transcrições
+- **Carregar Áudio do Disco**: Transcrever arquivos de áudio existentes (WAV, MP3, M4A, FLAC, OGG)
 - **Controle de Velocidade**: Ajuste de velocidade da fala (0.5x - 2.0x)
 
 ## 📋 Requisitos
@@ -77,11 +78,47 @@ python gravador_transcricao.py
 
 1. **Gravar Áudio**: Clique em "🔴 Iniciar Gravação" para começar
 2. **Parar Gravação**: Clique novamente para parar e salvar
-3. **Transcrever Local**: Usa o Whisper local (GPU)
-4. **Transcrever OpenAI**: Usa a API OpenAI
-5. **Comparar**: Veja os resultados lado a lado
+3. **Carregar Áudio**: Clique em "📁 Carregar Áudio" para selecionar um arquivo existente do disco
+4. **Transcrição Automática**: Ao gravar ou carregar, transcreve automaticamente nos dois serviços
+5. **Modo Individual**: Transcreva apenas com Local ou OpenAI separadamente
+6. **Comparar**: Veja os resultados lado a lado com tempos de processamento
 
-Os áudios são salvos em: `audios/`
+**Formatos de áudio suportados para carregamento:**
+- WAV (recomendado)
+- MP3
+- M4A
+- FLAC
+- OGG
+
+Os áudios gravados são salvos em: `audios/`
+
+### Modo Individual
+
+Clique em "🎯 Transcrição Individual" para abrir uma janela separada onde você pode:
+
+1. **Gravar novo áudio** ou **Carregar áudio existente**
+2. Escolher transcrever apenas com **Local** ou **OpenAI**
+3. Testar diferentes arquivos rapidamente
+
+### Como Carregar Áudio do Disco
+
+**Na janela principal:**
+1. Clique no botão "📁 Carregar Áudio"
+2. Selecione um arquivo de áudio (WAV, MP3, M4A, FLAC, OGG)
+3. A transcrição será iniciada automaticamente nos dois serviços
+4. Compare os resultados lado a lado
+
+**Na janela Modo Individual:**
+1. Clique no botão "📁 Carregar"
+2. Selecione o arquivo de áudio
+3. Escolha qual serviço usar para transcrição (Local ou OpenAI)
+4. Veja o resultado imediatamente
+
+**Exemplo de uso:**
+- Transcreva gravações antigas
+- Teste precisão com diferentes fontes de áudio
+- Compare qualidade entre diferentes formatos
+- Valide transcrições de reuniões ou entrevistas
 
 ## 📡 Endpoints da API
 
@@ -208,6 +245,8 @@ servico_tts_e_stt/
 2. **Produção**: Use OpenAI para máxima precisão
 3. **Privacidade**: Use apenas modelos locais
 4. **Comparação**: Use a interface gráfica para testar ambos
+5. **Transcrição de Arquivos**: Carregue áudios existentes para transcrição em lote
+6. **Análise de Qualidade**: Compare diferentes formatos e fontes de áudio
 
 ## 🔗 Integração com Aplicação
 
